@@ -18,11 +18,11 @@ type CreatePaymentResponse struct {
 type Payment struct {
 	ID                  string    `json:"id"`
 	MerchantID          string    `json:"merchant_id"`
-	Amount              int       `json:"amount"`
+	Amount              float64   `json:"amount"`
 	CurrencyCode        string    `json:"currency_code"`
-	PaymentAmount       int       `json:"payment_amount"`
+	PaymentAmount       float64   `json:"payment_amount"`
 	PaymentCurrencyCode string    `json:"payment_currency_code"`
-	ReceivedAmount      int       `json:"received_amount"`
+	ReceivedAmount      float64   `json:"received_amount"`
 	NetworkCode         string    `json:"network_code"`
 	Address             string    `json:"address"`
 	Link                string    `json:"link"`
@@ -33,7 +33,7 @@ type Payment struct {
 
 func (c *Client) CreatePayment(ctx context.Context, amount float64, cur, net string) (*Payment, error) {
 	// create data
-	data := map[string]interface{}{
+	data := map[string]any{
 		"amount":        amount,
 		"currency_code": cur,
 		"network_code":  net,

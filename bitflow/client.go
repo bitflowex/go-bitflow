@@ -13,6 +13,8 @@ type Client struct {
 	token   types.Token
 
 	Merchants Merchant
+	Accounts  Account
+	Invoices  Invoice
 }
 
 // Option is a function that configures a Client.
@@ -42,8 +44,12 @@ func NewClient(opts ...Option) (*Client, error) {
 		return nil, err
 	}
 
-	// set clients
+	// set merchants
 	c.Merchants = Merchant{c}
+	// set accounts
+	c.Accounts = Account{c}
+	// set invoices
+	c.Invoices = Invoice{c}
 
 	// return client and success
 	return c, nil

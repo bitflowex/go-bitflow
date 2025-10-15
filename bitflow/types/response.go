@@ -11,7 +11,7 @@ const (
 
 // Represents a response.
 type Response[T any] struct {
-	StatusCode int            `json:"statusCode"`
+	StatusCode int            `json:"status_code"`
 	Status     ResponseStatus `json:"status"`
 	Message    string         `json:"message,omitempty"`
 	Error      string         `json:"error,omitempty"`

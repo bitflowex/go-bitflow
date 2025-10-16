@@ -26,7 +26,7 @@ A robust and type-safe Go client library for interacting with the Bitflow API.
 To install the Bitflow Go Client, use `go get`:
 
 ```bash
-go get github.com/bitflowex/go-bitflow/bitflow
+go get github.com/bitflowex/go-bitflow/v2
 ```
 
 ## Usage

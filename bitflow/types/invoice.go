@@ -82,7 +82,7 @@ type InvoiceResponse struct {
 	PaymentCommission   *Amount       `json:"payment_commission,omitempty" `
 	PaymentNetworkCode  *NetworkCode  `json:"payment_network_code,omitempty"`
 	PaymentAddress      *Address      `json:"payment_address,omitempty"`
-	PaymentURL          *string       `json:"payment_url,omitempty" `
+	PaymentURL          string        `json:"payment_url"`
 
 	PaidAmount *Amount    `json:"paid_amount,omitempty"`
 	PaidAt     *time.Time `json:"paid_at,omitempty"`

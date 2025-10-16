@@ -15,6 +15,7 @@ type Client struct {
 	Merchants Merchant
 	Accounts  Account
 	Invoices  Invoice
+	Transfers Transfer
 }
 
 // Option is a function that configures a Client.
@@ -50,6 +51,8 @@ func NewClient(opts ...Option) (*Client, error) {
 	c.Accounts = Account{c}
 	// set invoices
 	c.Invoices = Invoice{c}
+	// set transfers
+	c.Transfers = Transfer{c}
 
 	// return client and success
 	return c, nil

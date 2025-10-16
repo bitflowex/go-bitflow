@@ -64,6 +64,8 @@ func post[T any, R any](ctx context.Context, c *Client, method string, request T
 
 	// set authorization header
 	req.Header.Set("Authorization", "Bearer "+c.token.String())
+	// set content type
+	req.Header.Set("Content-Type", "application/json")
 
 	// make http request
 	resp, err := http.DefaultClient.Do(req)

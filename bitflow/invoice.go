@@ -36,7 +36,7 @@ func (i *Invoice) Create(ctx context.Context, req types.CreateInvoiceRequest) (*
 	}
 
 	// create invoice
-	resp, err := post[types.CreateInvoiceRequest, *types.InvoiceResponse](ctx, i.c, "invoices", req)
+	resp, err := post[types.CreateInvoiceRequest, *types.InvoiceResponse](ctx, i.c, "merchants/me/invoices", req)
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +58,7 @@ func (i *Invoice) Get(ctx context.Context, id types.ID) (*types.InvoiceResponse,
 	}
 
 	// get invoice
-	resp, err := get[types.InvoiceResponse](ctx, i.c, "invoices/:"+id.String())
+	resp, err := get[types.InvoiceResponse](ctx, i.c, "invoices/"+id.String())
 	if err != nil {
 		return nil, err
 	}
